@@ -186,7 +186,7 @@ git diff --stage
 
 ### Commits
 
-When you have files that are already in the `stage` already, you can commit them, hence generating a snapshot of your file at a specific point in time.
+When you have files that are already in the `stage` area, you can commit them, hence generating a snapshot of your file at a specific point in time.
 
 You can use the `git commit` command.
 
