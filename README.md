@@ -312,6 +312,6 @@ git restore --staged <file>
 
 A `.gitgnore` file will not track any files (hence ignoring them). This, however, affects files that are already **not** tracked.
 
-Each line in the `.gitignore` file will match a pattern. If there is a blank line, it will have no use. Similarly, using a hashtag `#` serves as a comment (though you can put a backlast `\` in front of the first hashtag `#` for patterns that being with a hashtag `#`).
+Each line in the `.gitignore` file will match a pattern. If there is a blank line, it will have no use. Similarly, using a hashtag `#` serves as a comment (though you can put a backlash `\` in front of the first hashtag `#` for patterns that being with a hashtag `#`).
 
-[You can read all of the patterns here](https://git-scm.com/docs/gitignore#_pattern_format).
+[You can find all of the patterns here](https://git-scm.com/docs/gitignore#_pattern_format).
