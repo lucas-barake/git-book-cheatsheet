@@ -198,7 +198,7 @@ This will prompt you for a commit message.
 
 There are certain options that you can use when committing a file:
 
-This will commit a snapshot of all of the `staged` changes in the working directory.
+The `-a` option will commit a snapshot of all of the `staged` changes in the working directory.
 
 ```
 git commit -a
@@ -216,16 +216,18 @@ You can combine the `-a` and `-m` options into one single option which will comm
 git commit -am "<message>"
 ```
 
+#### Reset
+
 You can `reset` the state of a file prior to its latest snapshot (commit) by using the `git reset` command.
 
 ```
-git reset <file>
+git reset <commithash>
 ```
 
 You can pass in the following options:
 
 - `--soft` to uncommit changes (changes are left staged). This is useful if you regret committing multiple times instead of leaving them in a single commit.
-- `--mixed` uncommit + unstage changes (changes are left in working tree). This is useful if you want your staged and committed files to be unstaged
+- `--mixed` (default when no options passed) uncommit + unstage changes (changes are left in working tree). This is useful if you want your staged and committed files to be unstaged
 - `--hard` uncommit + unstage + delete changes (nothing will be left). This is useful if you want to restore everything to its previous state.
 
 Think of it this way:
@@ -237,6 +239,30 @@ Think of it this way:
 - `--soft` will pretend you never committed the file (#3).
 - `--mixed` will pretend you never added the file to the staging area (#2).
 - `--hard` will pretend you never modified the file (#1).
+
+#### Amend
+
+You sometimes may have already committed a file, but noticed that there is something you want to change. You open the file, change its content, and go back again to your CLI. If you add the file to the staging area and commit it, you will be left with two commits. One prior to the change you did, and the other one is the most recent change.
+
+The process would look like the following:
+
+1. File has already been committed
+2. You modify the file once again
+3. You add the file to the staging area
+4. You commit the file with the new changes
+5. You are left with two different commits
+
+You can avoid this by doing the following:
+
+1. File has already been committed
+2. You modify the file once again
+3. You add the file to the staging area `git add <file>`
+4. You use the `git commit --amend` to pass the state of the file you just modified to the message of the already committed file
+5. You run `git log` and notice that there is only one commit with the correct state
+
+```
+git commit --amend
+```
 
 ### Ignoring Files
 
