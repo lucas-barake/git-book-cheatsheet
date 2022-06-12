@@ -28,7 +28,9 @@ A basic cheatsheet encompassing all of the topics explained in the official [Pro
 - [Cloning a Repository](#cloning-a-repository)
 - [Recording Changes to the Repository](#recording-changes-to-the-repository)
 - [Commits](#commits)
-- [Removing and Restoring Files](#removing-and-restoring-files)
+- [Reset](#reset)
+- [Amend](#amend)
+- [Removing, Reverting, and Restoring Files](#removing-reverting-and-restoring-files)
 - [Ignoring Files](#ignoring-files)
 
 ### Initialize a Git Repository
@@ -191,7 +193,7 @@ This command will compare what is in your working directory with what is in your
 If you want to see a comparison with the changes that are staged, you can pass the `--staged` or `--cached` option (they are the same).
 
 ```
-git diff --stage
+git diff --staged
 ```
 
 ### Commits
@@ -226,7 +228,7 @@ You can combine the `-a` and `-m` options into one single option which will comm
 git commit -am "<message>"
 ```
 
-#### Reset
+### Reset
 
 You can `reset` the state of a file prior to its latest snapshot (commit) by using the `git reset` command.
 
@@ -250,33 +252,33 @@ Think of it this way:
 - `--mixed` will pretend you never added the file to the staging area (#2).
 - `--hard` will pretend you never modified the file (#1).
 
-#### Amend
+### Amend
 
 You sometimes may have already committed a file, but noticed that there is something you want to change. You open the file, change its content, and go back again to your CLI. If you add the file to the staging area and commit it, you will be left with two commits. One is from before you made the modification, and the other is from after you made it.
 
 The process would look like the following:
 
-1. File has already been committed
-2. You modify the file once again
-3. You add the file to the staging area
-4. You commit the file with the new changes
-5. You are left with two different commits
+1. File has already been committed.
+2. You modify the file once again.
+3. You add the file to the staging area.
+4. You commit the file with the new changes.
+5. You are left with two different commits.
 
 You can avoid this by doing the following:
 
-1. File has already been committed
-2. You modify the file once again
-3. You add the file to the staging area `git add <file>`
-4. You use the `git commit --amend` to pass the state of the file you just modified to the message of the already committed file
-5. You run `git log` and notice that there is only one commit with the correct state
+1. File has already been committed.
+2. You modify the file once again.
+3. You add the file to the staging area `git add <file>`.
+4. You use the `git commit --amend` to pass the state of the file you just modified to the message of the already committed file.
+5. You run `git log` and notice that there is only one commit with the correct state.
 
 ```
 git commit --amend
 ```
 
-### Removing and Restoring Files
+### Removing, Reverting, and Restoring Files
 
-If you want to remove a file from the repository and locally you can use the `rm` command
+If you want to remove a file from the repository and locally you can use the `rm` command.
 
 ```
 git rm <file>
@@ -292,6 +294,12 @@ If you want to remove a directory and it's subsequent child folders or files, yo
 
 ```
 git rm -r <dirname>
+```
+
+You can revert a file's state to its previous state (when you last committed or cloned) using the `revert` command.
+
+```
+git revert <file>
 ```
 
 To unstage an already committed file, you can use the `restore` command alongside passing the `--staged` option.
