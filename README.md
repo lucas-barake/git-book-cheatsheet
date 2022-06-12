@@ -89,3 +89,81 @@ A file in your working directory that is being observed by Git can be in one of 
 `tracked` means that the file is being watched for any modifications by Git.
 
 `untracked` means that the file is not being watched by Git and is not in your staging area.
+
+### Git Status
+
+You can check the state of your files by using the `status` command. It displays which files are `staged`, `unstaged`, and `untracked`.
+
+```
+git status
+```
+
+An example output is the following:
+
+```
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+    modified: README.md
+```
+
+This shows which file(s) have been modified but are not in the staging area.
+
+You can use the `-s` or `--short` option to display a less verbose output.
+
+```
+git status -s
+git status --short
+```
+
+This will instead output the following:
+
+```
+M README.md
+```
+
+Where the `M` indicates that the file has been modified.
+
+When a file is in the staging area, the output would be the following:
+
+```
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+    modified: README.md
+```
+
+Alternatively, with `-s` or `--short`:
+
+```
+M README.md
+```
+
+### Git Log
+
+The `git log` command, in contrast to the `git status` command, displays the **committed history** only.
+
+```
+git log
+```
+
+An example output would be the following:
+
+```
+commit db45d13a7fde24e15950f20a0b9df247472ab270 (HEAD -> main, origin/main)
+Author: lucas <lpatronr@gmail.com>
+Date:   Sat Jun 11 22:35:05 2022 -0500
+
+    First commit
+```
+
+Similarly to the `git status -s` option, we can do the same with the `--oneline` option.
+
+```
+git log --oneline
+```
+
+Yielding the following output:
+
+```
+db45d13 (HEAD -> main, origin/main) First commit
+```
