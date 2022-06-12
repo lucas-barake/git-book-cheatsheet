@@ -2,7 +2,7 @@
 
 ![Git Logo](./Images/git-logo.png)
 
-A basic cheatsheet encompassing all of the topics explained in the official [Pro Git Book.](https://git-scm.com/book/en/v2) alongside a recopilation of excellent examples presented in Stack Overflow.
+A basic cheatsheet encompassing all of the topics explained in the official [Pro Git Book](https://git-scm.com/book/en/v2) in addition to a recitation of fantastic examples from Stack Overflow.
 
 <hr>
 
@@ -38,7 +38,7 @@ Navigate to the desired project in the CLI and execute the following command:
 git init
 ```
 
-This will create a `.git` folder which will contain all of the information regarding the project and begin observing files.
+This will create a `.git` folder which will contain all of the information regarding the project and will begin observing files.
 
 ### Add Files to the Staging Area
 
@@ -271,6 +271,26 @@ You can avoid this by doing the following:
 
 ```
 git commit --amend
+```
+
+#### Removing Files
+
+If you want to remove a file from the repository and locally you can use the `rm` command
+
+```
+git rm <file>
+```
+
+If you want to remove a file from the repository, but not locally, you can use the `rm` command alongside the `--cached` option.
+
+```
+git rm --cached <file>
+```
+
+If you want to remove a directory and it's subsequent child folders or files, you can pass in the `-r` option.
+
+```
+git rm -r <dirname>
 ```
 
 ### Ignoring Files
