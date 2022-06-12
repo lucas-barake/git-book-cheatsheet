@@ -28,6 +28,7 @@ A basic cheatsheet encompassing all of the topics explained in the official [Pro
 - [Cloning a Repository](#cloning-a-repository)
 - [Recording Changes to the Repository](#recording-changes-to-the-repository)
 - [Commits](#commits)
+- [Removing and Restoring Files](#removing-and-restoring-files)
 - [Ignoring Files](#ignoring-files)
 
 ### Initialize a Git Repository
@@ -273,7 +274,7 @@ You can avoid this by doing the following:
 git commit --amend
 ```
 
-#### Removing Files
+### Removing and Restoring Files
 
 If you want to remove a file from the repository and locally you can use the `rm` command
 
@@ -291,6 +292,12 @@ If you want to remove a directory and it's subsequent child folders or files, yo
 
 ```
 git rm -r <dirname>
+```
+
+To unstage an already committed file, you can use the `restore` command alongside passing the `--staged` option.
+
+```
+git restore --staged <file>
 ```
 
 ### Ignoring Files
