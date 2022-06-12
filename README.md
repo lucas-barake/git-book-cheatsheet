@@ -2,7 +2,7 @@
 
 ![Git Logo](./Images/git-logo.png)
 
-A basic cheatsheet encompassing all of the topics explained in the official [Pro Git Book.](https://git-scm.com/book/en/v2)
+A basic cheatsheet encompassing all of the topics explained in the official [Pro Git Book.](https://git-scm.com/book/en/v2) alongside a recopilation of excellent examples presented in Stack Overflow.
 
 <hr>
 
