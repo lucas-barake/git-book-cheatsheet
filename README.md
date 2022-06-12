@@ -21,6 +21,15 @@ A basic cheatsheet encompassing all of the topics explained in the official [Pro
 
 ## Git Basics
 
+### Index
+
+- [Initialize a Git Repository](#initialize-a-git-repository)
+- [Add Files to the Staging Area](#add-files-to-the-staging-area)
+- [Cloning a Repository](#cloning-a-repository)
+- [Recording Changes to the Repository](#recording-changes-to-the-repository)
+- [Commits](#commits)
+- [Ignoring Files](#ignoring-files)
+
 ### Initialize a Git Repository
 
 Navigate to the desired project in the CLI and execute the following command:
@@ -242,7 +251,7 @@ Think of it this way:
 
 #### Amend
 
-You sometimes may have already committed a file, but noticed that there is something you want to change. You open the file, change its content, and go back again to your CLI. If you add the file to the staging area and commit it, you will be left with two commits. One prior to the change you did, and the other one is the most recent change.
+You sometimes may have already committed a file, but noticed that there is something you want to change. You open the file, change its content, and go back again to your CLI. If you add the file to the staging area and commit it, you will be left with two commits. One is from before you made the modification, and the other is from after you made it.
 
 The process would look like the following:
 
